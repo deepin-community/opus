@@ -1,20 +1,30 @@
 Source: opus
 Section: sound
 Priority: optional
-Maintainer: Ron Lee <ron@debian.org>
-Build-Depends: debhelper (>= 9)
-Build-Depends-Indep: doxygen, graphviz
-Standards-Version: 4.2.1.5
+Maintainer: Debian Multimedia Maintainers <debian-multimedia@lists.debian.org>
+Uploaders:
+ IOhannes m zmölnig (Debian/GNU) <umlaeute@debian.org>,
+ Ron Lee <ron@debian.org>,
+Build-Depends:
+ debhelper-compat (= 13),
+Build-Depends-Indep:
+ doxygen,
+ graphviz,
+Standards-Version: 4.6.2
+Rules-Requires-Root: no
 Homepage: http://www.opus-codec.org
-Vcs-Git: https://salsa.debian.org/ron/opus.git
-Vcs-Browser: https://salsa.debian.org/ron/opus
+Vcs-Git: https://salsa.debian.org/multimedia-team/opus.git
+Vcs-Browser: https://salsa.debian.org/multimedia-team/opus
 
 Package: libopus0
 Section: libs
 Architecture: any
 Multi-Arch: same
-Depends: ${shlibs:Depends}
-Suggests: opus-tools
+Depends:
+ ${misc:Depends},
+ ${shlibs:Depends},
+Suggests:
+ opus-tools,
 Description: Opus codec runtime library
  The Opus codec is designed for interactive speech and audio transmission over
  the Internet. It is designed by the IETF Codec Working Group and incorporates
@@ -43,7 +53,9 @@ Package: libopus-dev
 Section: libdevel
 Architecture: any
 Multi-Arch: same
-Depends: libopus0 (= ${binary:Version})
+Depends:
+ libopus0 (= ${binary:Version}),
+ ${misc:Depends},
 Description: Opus codec library development files
  The Opus codec is designed for interactive speech and audio transmission over
  the Internet. It is designed by the IETF Codec Working Group and incorporates
@@ -68,18 +80,15 @@ Description: Opus codec library development files
  .
  This package provides the Opus library headers and development files.
 
-Package: libopus-dbg
-Section: debug
-Priority: extra
-Architecture: any
-Multi-Arch: same
-Depends: libopus0 (= ${binary:Version})
-Description: debugging symbols for libopus
- This package provides the detached debug symbols for libopus.
-
 Package: libopus-doc
 Section: doc
 Architecture: all
+Depends:
+ ${misc:Depends},
+Multi-Arch: foreign
 Description: libopus API documentation
+ The Opus codec is designed for interactive speech and audio transmission over
+ the Internet. It is designed by the IETF Codec Working Group and incorporates
+ technology from Skype's SILK codec and Xiph.Org's CELT codec.
+ .
  This package contains the developer documentation for libopus.
-
