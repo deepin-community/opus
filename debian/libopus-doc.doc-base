@@ -23,5 +23,5 @@ Abstract: A low-latency interactive speech and audio codec
 Section: Programming/C
 
 Format: HTML
-Index: /usr/share/doc/libopus-doc/html/index.html
-Files: /usr/share/doc/libopus-doc/html/*
+Index: /usr/share/doc/libopus-dev/html/index.html
+Files: /usr/share/doc/libopus-dev/html/*
