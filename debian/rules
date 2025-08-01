@@ -45,6 +45,12 @@ ifneq (,$(filter arm armel mips mipsel, $(DEB_HOST_ARCH)))
 	EXTRA_CONFIG_FLAGS += --enable-fixed-point
 endif
 
+# DEEP_PLC FTBFS on armel
+ifeq (,$(filter armel, $(DEB_HOST_ARCH)))
+	EXTRA_CONFIG_FLAGS += --enable-deep-plc
+	EXTRA_CONFIG_FLAGS += --enable-osce
+endif
+
 %:
 	dh $@
 
