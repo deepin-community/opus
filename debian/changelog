@@ -1,3 +1,9 @@
+opus (1.5.2-2deepin1) unstable; urgency=medium
+
+  * Rebuild with LTO enabled (dpkg vendor feature optimize/lto).
+
+ -- tunaichao <tunaichao@uniontech.com>  Mon, 21 Sep 2026 16:00:09 +0800
+
 opus (1.5.2-2) unstable; urgency=medium
 
   * Disable Deep PLC on armel
